@@ -41,6 +41,16 @@
         rel="stylesheet" />
 </head>
 <script>
+    // Check the URL path
+    const path = window.location.pathname;
+
+    // If the path starts with '/app', manipulate the browser history to keep the rest of the URL
+    if (path.startsWith('/app')) {
+        window.history.replaceState({}, '', path);  // Preserve the current path
+        window.location.href = '/app/';   // Load the app's entry point
+    } 
+</script>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
         // Get all navigation links
         const navLinks = document.querySelectorAll('.nav-link');
