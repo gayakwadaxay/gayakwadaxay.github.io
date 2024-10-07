@@ -48,7 +48,10 @@
     if (path.startsWith('/app')) {
         window.history.replaceState({}, '', path);  // Preserve the current path
         window.location.href = '/app/';   // Load the app's entry point
-    } 
+    } else if (path !== '/' && path !== '/index.html') {
+        // If it's not a valid root URL, redirect to root 404 page
+        window.location.href = '/';
+    }
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
