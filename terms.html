@@ -40,34 +40,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Get all navigation links
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('section');
-
-        // Function to handle adding/removing active class
-        function setActiveLink() {
-            let index = sections.length;
-
-            // Loop through each section
-            while (--index && window.scrollY + 50 < sections[index].offsetTop) { } // Adjust the 50 for triggering point
-
-            // Remove 'active' class from all links
-            navLinks.forEach((link) => link.classList.remove('active'));
-
-            // Add 'active' class to the corresponding link
-            navLinks[index].classList.add('active');
-        }
-
-        // Initial call to set active link on page load
-        setActiveLink();
-
-        // Listen for scroll events to dynamically update the active link
-        window.addEventListener('scroll', setActiveLink);
-    });
-
-</script>
 
 <body>
     <!-- NAVBAR SECTION -->
