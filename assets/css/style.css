@@ -11286,13 +11286,13 @@ textarea.form-control-lg {
 .slide-in-right {
   opacity: 0;
   transform: translateX(100%);
-  transition: transform 1s ease-out, opacity 1s ease-out;
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out;
 }
 
 .slide-in-left {
   opacity: 0;
   transform: translateX(-100%);
-  transition: transform 1s ease-out, opacity 1s ease-out;
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out;
 }
 
 .start.slide-in-right {
