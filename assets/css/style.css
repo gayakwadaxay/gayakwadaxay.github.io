@@ -11261,3 +11261,47 @@ textarea.form-control-lg {
   background-color: #2B1854;
 }
 
+@keyframes slideInRight {
+  0% {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.active.slide-in-right {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.active.slide-in-left {
+  transform: translateX(0);
+  opacity: 1;
+}
+
