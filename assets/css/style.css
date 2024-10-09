@@ -11307,4 +11307,5 @@ textarea.form-control-lg {
 
 .nav, .footer, .section{
   max-width: 100vw;
+  overflow: hidden;
 }
