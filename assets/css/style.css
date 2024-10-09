@@ -11305,6 +11305,6 @@ textarea.form-control-lg {
   opacity: 1;
 }
 
-nav, footer{
+nav, footer, section{
   max-width: 100vw;
 }
