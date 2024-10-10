@@ -88,8 +88,6 @@
             slideInElements.forEach((element, index) => {
                 const elementPos = (element.getBoundingClientRect().top + element.getBoundingClientRect().bottom) / 2;
                 const screenPos = window.innerHeight; // Adjust trigger point
-                if (!index) console.log(elementPos)
-
                 // Trigger animation when element comes into view
                 if (elementPos < screenPos && elementPos > 0) {
                     element.classList.add('start');
