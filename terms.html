@@ -39,6 +39,85 @@
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
+    <style>
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        main h2 {
+            color: #004080;
+            margin-top: 20px;
+        }
+
+        main p {
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        main ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        main ul li {
+            margin-bottom: 10px;
+        }
+
+        main .definition {
+            font-style: italic;
+            color: #555;
+        }
+
+        main strong {
+            color: #004080;
+        }
+
+        .tabs {
+            max-width: 800px;
+            display: flex;
+            margin: 20px auto;
+            justify-content: center;
+            background-color: #004080;
+            padding: 10px;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            color: white;
+            background-color: #004080;
+            border: none;
+            outline: none;
+        }
+
+        .tab.active {
+            background-color: #0066cc;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5px;
+            background: #fff;
+            border-radius: 8px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
 </head>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -103,42 +182,348 @@
     </nav>
 
     <section id="terms" class="top-section">
-        <div class="container">
-            <h1>Terms and Conditions</h1>
-            <p>Welcome to SafeGreet! These terms and conditions outline the rules and regulations for the use of
-                SafeGreet's Website and Services.</p>
+        <!-- <div class="tabs">
+            <button class="tab active" data-tab="app1">Visitor App</button>
+            <button class="tab" data-tab="app2">Hotel App</button>
+        </div> -->
 
-            <h2>1. Terms of Use</h2>
-            <p>By accessing this website and using our services, you accept these terms and conditions in full. If you
-                disagree with any part of the terms, please do not use our website.</p>
+        <!-- <div id="app1" class="tab-content active">
+            <main>
+                <h2>Terms and Conditions</h2>
+                <p><strong>Effective Date:</strong> November 28, 2024</p>
+                <h2>Introduction</h2>
 
-            <h2>2. License</h2>
-            <p>Unless otherwise stated, SafeGreet and/or its licensors own the intellectual property rights for all
-                material on SafeGreet. You may access this for personal use subject to the restrictions set out in these
-                terms and conditions.</p>
+                <p>Welcome to <strong>Safegreet.in</strong>. By accessing or using our services, you agree to be bound
+                    by
+                    the following terms and conditions. Please read these terms carefully.</p>
 
-            <h2>3. Restrictions</h2>
-            <p>You are restricted from the following:
-            <ul>
-                <li>Publishing any material from SafeGreet in any media without permission.</li>
-                <li>Using the website in any way that is damaging to the website or its users.</li>
-                <li>Engaging in any data mining or similar activities on SafeGreet's platform.</li>
-            </ul>
-            </p>
+                <h2>Definitions</h2>
+                <p class="definition">For the purposes of these Terms and Conditions, the following terms shall have the
+                    following meanings:</p>
+                <ul>
+                    <li><strong>"Safegreet"</strong>: Refers to the business entity that provides the software services
+                        via
+                        the website Safegreet.in, which is a subsidiary of Lifeshield EHS Services.</li>
+                    <li><strong>"User"</strong>: Any individual, entity, organization, customer, visitor, employee,
+                        employer, or company, artificial or real, who accesses or uses the services provided by
+                        Safegreet.
+                    </li>
+                    <li><strong>"Services"</strong>: Refers to all offerings provided by Safegreet, including but not
+                        limited to visitor management, asset management, safety management, security management, and any
+                        future services added to the platform.</li>
+                    <li><strong>"Platform"</strong>: Refers to Safegreet's website (Safegreet.in), mobile applications,
+                        or
+                        any other medium through which the services are provided.</li>
+                    <li><strong>"Personal Information"</strong>: Refers to any information that can be used to identify
+                        an
+                        individual, including but not limited to name, address, contact information, and other personal
+                        data
+                        shared with Safegreet.</li>
+                    <li><strong>"AMC"</strong>: Refers to the Annual Maintenance Charges, which are required for the
+                        continued use of Safegreet's services after the initial integration period.</li>
+                    <li><strong>"Integration Fee"</strong>: The one-time fee paid by the user for integrating
+                        Safegreet's
+                        services into their operations.</li>
+                    <li><strong>"NDA"</strong>: Refers to the Non-Disclosure Agreement that users are required to sign
+                        to
+                        protect the confidentiality of Safegreet's proprietary information.</li>
+                    <li><strong>"Service Models"</strong>: Refers to the different tiers or packages of services offered
+                        by
+                        Safegreet, including the Silver, Gold, and Diamond models, as well as any future service tiers
+                        that
+                        may be introduced.</li>
+                    <li><strong>"Third Parties"</strong>: Refers to any entity, business, or individual that is not
+                        directly
+                        affiliated with Safegreet but may receive user data for advertising, operational, or marketing
+                        purposes.</li>
+                    <li><strong>"Arbitration"</strong>: A method of dispute resolution where an arbitrator or a panel of
+                        arbitrators is appointed to settle any disputes arising between Safegreet and the user.</li>
+                </ul>
 
-            <h2>4. Your Account</h2>
-            <p>You are responsible for maintaining the confidentiality of your account credentials and for all
-                activities under your account.</p>
+                <h2>1. Overview</h2>
+                <p>Safegreet provides a range of management services, including but not limited to visitor management,
+                    asset
+                    management, safety management, and security management. These terms apply to all users, including
+                    customers, visitors, employees, employers, and entities using the Safegreet platform.</p>
 
-            <h2>5. Termination</h2>
-            <p>We may terminate or suspend access to our services immediately, without prior notice, if you breach the
-                terms.</p>
+                <h2>2. Acceptance of Terms</h2>
+                <p>By accessing or using the Safegreet website or services, and by clicking on the "I Agree" button when
+                    prompted, you acknowledge that you have read, understood, and agree to be bound by these Terms and
+                    Conditions. Safegreet reserves the right to amend these terms from time to time without prior
+                    notice.
+                    Continued use of our services after any changes constitutes your acceptance of the updated terms.
+                </p>
 
-            <h2>6. Governing Law</h2>
-            <p>These terms will be governed by and interpreted in accordance with the laws of India, and you submit to
-                the exclusive jurisdiction of the courts located in Pune, Maharashtra.</p>
+                <h2>3. Services Provided</h2>
+                <p>
+                    Safegreet offers the following services:
+                <ul>
+                    <li>Visitor Management</li>
+                    <li>Asset Management</li>
+                    <li>Safety Management</li>
+                    <li>Security Management</li>
+                </ul>
+
+                Additional services may be added over time, and the terms will automatically extend to cover such
+                services.
+
+                </p>
+                <h2>4. Jurisdiction</h2>
+                <p>
+                    These terms and conditions are applicable in any country where Safegreet services are sold or
+                    distributed. By using our platform, you agree to comply with local laws applicable to your
+                    jurisdiction.
+
+                </p>
+                <h2>5. User Obligations</h2>
+                <p>
+                <ul>
+                    <li><strong>Information Disclosure:</strong> Users must provide all necessary information requested
+                        by
+                        Safegreet to use the services effectively. This may include personal, company, or visitor
+                        information.</li>
+                    <li><strong>Compliance:</strong> Users (including any individual, company, or entity, artificial or
+                        real) must follow the legal and operational procedures as requested by Safegreet, including
+                        signing
+                        a Non-Disclosure Agreement (NDA) where applicable.</li>
+                    <li><strong>Permissions:</strong> Users must provide any permissions required for the proper
+                        functioning
+                        of Safegreet's software, including but not limited to software access permissions.</li>
+                </ul>
+
+                </p>
+                <h2>6. Payments and Subscription</h2>
+                <p>
+                <ul>
+                    <li><strong>One-Time Payment:</strong> Safegreet operates on a one-time integration fee model. Users
+                        will make a one-time payment for software integration.</li>
+                    <li><strong>Annual Maintenance Charges (AMC:)</strong> After the first year, users are required to
+                        pay
+                        AMC to continue using the service.</li>
+                    <li><strong>Additional Development Charges:</strong> Any additional custom development requested by
+                        the
+                        user may incur extra charges.</li>
+                    <li><strong>Subscription Amendment:</strong> Although Safegreet is not currently based on a
+                        subscription
+                        model, this may change. Any such changes will be communicated to users in advance.</li>
+                </ul>
+
+                </p>
+                <h2>7. Privacy Policy</h2>
+                <p>
+                    Safegreet is committed to protecting your privacy. Personal and business information provided to
+                    Safegreet will be used solely for operational purposes. Please refer to our Privacy Policy [include
+                    link
+                    once ready] for more detailed information on how we collect, store, and use your data.
+
+                </p>
+                <h2>8. Terms of Sharing Data</h2>
+                <p>
+                    Safegreet may share user data with third-party advertisers, partners, or service providers in the
+                    following circumstances:
+                <ul>
+                    <li><strong>Operational Purposes:</strong> Safegreet may share data with third parties that are
+                        necessary for the operation of the platform, including third-party service providers or
+                        subcontractors.</li>
+                    <li><strong>Advertising and Marketing:</strong> Safegreet may share data with advertisers or
+                        marketing
+                        partners whose advertisements, links, or content are hosted on the Safegreet platform.</li>
+                    <li><strong>Compliance with Law:</strong> Safegreet may disclose user data to comply with legal
+                        obligations, governmental requests, or to protect the rights, property, or safety of Safegreet,
+                        its
+                        users, or others.</li>
+                </ul>
+
+                By using Safegreet and accepting these terms, you consent to the sharing of your data in the
+                circumstances
+                outlined above. For more details, please review our Privacy Policy [link to privacy policy once
+                available].
+
+                </p>
+                <h2>9. Intellectual Property</h2>
+                <p>
+                    All content, software, and technology associated with Safegreet are the property of Safegreet and
+                    are
+                    protected by copyright, trademark, and other intellectual property laws.
+
+                </p>
+                <h2>10. Dispute Resolution</h2>
+                <p>
+                    In the event of a dispute:
+                <ul>
+                    <li>All legal disputes shall be settled under the jurisdiction of the courts in Pune, Maharashtra,
+                        India.</li>
+                    <li>At Safegreet's discretion, disputes may be resolved through arbitration. Arbitrators will be
+                        appointed by Safegreet, and their decision will be final and binding.</li>
+                </ul>
+
+                </p>
+                <h2>11. Limitation of Liability</h2>
+                <p>
+                    Safegreet shall not be held liable for any indirect, incidental, or consequential damages arising
+                    from
+                    the use of our services, including but not limited to loss of data, loss of profits, or service
+                    interruptions.
+
+                </p>
+                <h2>12. Service Models</h2>
+                <p>
+                    Safegreet has introduced three service models for Visitor Management:
+                <ul>
+                    <li><strong>Silver Model</strong></li>
+                    <li><strong>Gold Model</strong></li>
+                    <li><strong>Diamond Model</strong></li>
+                </ul>
+
+                These models offer varying levels of features and services. Safegreet may also introduce similar models
+                for
+                other services, such as Asset Management, Safety Management, and Security Management, in the future.
+
+                All terms and conditions outlined in this document are applicable to all service models offered by
+                Safegreet, regardless of the service or tier (Silver, Gold, Diamond, or any other future models).
+                Safegreet
+                reserves the right to amend, add, or remove service models at its discretion, and such changes will be
+                communicated to users in advance.
+
+                </p>
+                <h2>13. Termination</h2>
+                <p>
+                    Safegreet reserves the right to terminate or suspend access to its services at any time, with or
+                    without
+                    notice, for any reason, including but not limited to violations of these terms.
+
+                </p>
+                <h2>14. Amendments to Terms</h2>
+                <p>
+                    Safegreet reserves the right to amend these terms at any time. Any changes will be posted on our
+                    website, and it is your responsibility to review these terms periodically for any updates.
+
+                </p>
+                <h2>15. Contact Information</h2>
+                <p>
+                    For any questions about these Terms and Conditions, please contact us</p>
+            </main>
+        </div> -->
+
+        <div id="app2" class="tab-content active">
+
+            <main>
+                <h2>Terms and Conditions</h2>
+                <p><strong>Effective Date:</strong> November 28, 2024</p>
+
+                <h2>Introduction</h2>
+                <p>Welcome to <strong>Safegreet Police and Hotel Management Software</strong> (hereafter referred to as
+                    “the Software”).
+                    These Terms and Conditions govern your access to and use of the Software, operated by Safegreet, a
+                    subsidiary of Lifeshield EHS Services, with its registered office at Office No. 87, 88, D Wing, 5th
+                    Floor, K.K. Market, Dhankawadi, Pune - 411043.</p>
+                <p>By accessing or using the Software, you agree to these Terms and Conditions. If you do not agree, you
+                    may
+                    not access or use the Software.</p>
+
+                <h2>1. Definitions</h2>
+                <ul>
+                    <li><strong>"Company"</strong>: Refers to Safegreet, a subsidiary of Lifeshield EHS Services.</li>
+                    <li><strong>"Software"</strong>: Refers to the Safegreet Police and Hotel Management platform,
+                        including
+                        its web and mobile applications.</li>
+                    <li><strong>"User"</strong>: Refers to authorized personnel such as hotel managers, law enforcement
+                        officials, and administrative staff accessing the Software.</li>
+                    <li><strong>"Visitor"</strong>: Refers to individuals whose personal data is collected via the
+                        Software.
+                    </li>
+                    <li><strong>"Personal Data"</strong>: Includes name, address, photo ID, selfie, and other
+                        information
+                        related to visitors.</li>
+                </ul>
+
+                <h2>2. Scope of Use</h2>
+                <p>The Software provides functionalities to:</p>
+                <ul>
+                    <li>Collect visitor details, including name, address, photo ID, and selfies.</li>
+                    <li>Verify visitor photo IDs with government databases.</li>
+                    <li>Match visitor selfies against criminal databases for potential threat detection.</li>
+                </ul>
+
+                <h2>3. User Obligations</h2>
+                <ul>
+                    <li><strong>Accuracy of Information:</strong> Users must ensure the accuracy and legality of all
+                        data
+                        entered into the Software.</li>
+                    <li><strong>Data Confidentiality:</strong> Users are responsible for safeguarding login credentials
+                        and
+                        preventing unauthorized access.</li>
+                    <li><strong>Compliance with Law:</strong> Users must ensure their use of the Software complies with
+                        applicable laws and regulations.</li>
+                    <li><strong>Prohibited Activities:</strong> Users may not:
+                        <ul>
+                            <li>Use the Software for unauthorized or illegal purposes.</li>
+                            <li>Attempt to reverse-engineer, hack, or exploit the Software in any manner.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2>4. Data Collection and Retention</h2>
+                <p>The Company collects and stores visitor information for verification and security purposes. Data is
+                    retained for a minimum period of 10 years or as required by applicable law.</p>
+
+                <h2>5. Limitation of Liability</h2>
+                <ul>
+                    <li>The Company is not responsible for inaccuracies in third-party databases used for ID
+                        verification or
+                        criminal record matching.</li>
+                    <li>The Company is not liable for damages arising from the misuse or unauthorized use of the
+                        Software by
+                        Users.</li>
+                    <li>The Software's output, including criminal matches, is advisory in nature and should be
+                        corroborated
+                        by Users.</li>
+                </ul>
+
+                <h2>6. Termination of Use</h2>
+                <p>The Company reserves the right to terminate access to the Software if:</p>
+                <ul>
+                    <li>A User violates these Terms.</li>
+                    <li>The Software is used for illegal or unauthorized purposes.</li>
+                </ul>
+
+                <h2>7. Governing Law and Jurisdiction</h2>
+                <p>These Terms are governed by the laws of India, and any disputes shall be subject to the exclusive
+                    jurisdiction of the courts in Pune, Maharashtra.</p>
+
+                <h2>8. Modifications to Terms</h2>
+                <p>The Company may update these Terms from time to time. Users will be notified of significant changes,
+                    and
+                    continued use of the Software after such changes will constitute acceptance of the updated Terms.
+                </p>
+
+                <h2>9. Contact Information</h2>
+                <p>For inquiries related to these Terms, please contact:</p>
+                <p><strong>Email:</strong> info@safegreet.in</p>
+                <p><strong>Phone:</strong> 9309073569</p>
+                <p><strong>Address:</strong> Office No. 87, 88, D Wing, 5th Floor, K.K. Market, Dhankawadi, Pune -
+                    411043
+                </p>
+            </main>
         </div>
+
+
     </section>
+
+    <!-- <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script> -->
 
     <!-- FOOTER SECTION -->
     <!-- FOOTER SECTION -->
