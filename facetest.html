@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safe Greet</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <style>
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        main h2 {
+            color: #004080;
+            margin-top: 20px;
+        }
+
+        main p {
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        main ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        main ul li {
+            margin-bottom: 10px;
+        }
+
+        main .definition {
+            font-style: italic;
+            color: #555;
+        }
+
+        main strong {
+            color: #004080;
+        }
+
+        .tabs {
+            max-width: 800px;
+            display: flex;
+            margin: 20px auto;
+            justify-content: center;
+            background-color: #004080;
+            padding: 10px;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            color: white;
+            background-color: #004080;
+            border: none;
+            outline: none;
+        }
+
+        .tab.active {
+            background-color: #0066cc;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5px;
+            background: #fff;
+            border-radius: 8px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+
+        .upload-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .result-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            max-width: 200px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const slideInElements = document.querySelectorAll('.slide-in-right, .slide-in-left');
+
+        // Function to handle animation when element enters the viewport
+        function animateOnScroll() {
+            slideInElements.forEach((element, index) => {
+                const elementPos = (element.getBoundingClientRect().top + element.getBoundingClientRect().bottom) / 2;
+                const screenPos = window.innerHeight; // Adjust trigger point
+                // Trigger animation when element comes into view
+                if (elementPos < screenPos && elementPos > 0) {
+                    element.classList.add('start');
+                }
+                if (elementPos < (-screenPos / 2) || (elementPos > (screenPos * 1.5))) {
+                    element.classList.remove('start');
+                }
+            });
+        }
+
+        // Initial call to trigger animation
+        animateOnScroll();
+
+        // Listen for scroll event to trigger animation
+        window.addEventListener('scroll', animateOnScroll);
+    });
+
+</script>
+
+<body>
+    <!-- NAVBAR SECTION -->
+    <nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+        <div class="container">
+            <h1 className="text-xl font-bold text-gray-800 text-white pacifico-regular"
+                style=" font-family: 'Pacifico', cursive;font-weight: 400;font-style: normal; color:white; font-size: 30px;">
+                SafeGreet!
+            </h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse justify-content-end collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/terms.html">Terms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/policy.html">Policy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="terms" class="top-section">
+        <div id="app2" class="tab-content active">
+            <div class="upload-container">
+                <label for="upload1">Upload Image 1:</label>
+                <input type="file" id="upload1" accept="image/*">
+
+                <label for="upload2">Upload Image 2:</label>
+                <input type="file" id="upload2" accept="image/*">
+
+                <button id="submit">Submit</button>
+            </div>
+            <div class="result-container" id="result">
+                <!-- Results will be displayed here -->
+            </div>
+        </div>
+        </div>
+
+
+    </section>
+
+    <!-- <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script> -->
+
+    <!-- FOOTER SECTION -->
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- CONTENT FOR PHONE -->
+                <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex slide-in-left">
+                    <div class="contact-box__icon" style="cursor: pointer;"
+                        onclick="window.location.href=href='tel:9309073569'">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call"
+                            viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                            <path d="M15 7a2 2 0 0 1 2 2" />
+                            <path d="M15 3a6 6 0 0 1 6 6" />
+                        </svg>
+                    </div>
+                    <div class="contact-box__info">
+                        <a href="tel:9309073569" class="contact-box__info--title">+919309073569</a>
+                        <br><a href="tel:8600006546" class="contact-box__info--subtitle">+918600006546</a>
+                    </div>
+                </div>
+
+                <!-- CONTENT FOR EMAIL -->
+                <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+                    <div class="contact-box__icon" style="cursor: pointer;"
+                        onclick="window.location.href=href='mailto:info@safegreet.com'">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-opened"
+                            viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <polyline points="3 9 12 15 21 9 12 3 3 9" />
+                            <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                            <line x1="3" y1="19" x2="9" y2="13" />
+                            <line x1="15" y1="13" x2="21" y2="19" />
+                        </svg>
+                    </div>
+                    <div class="contact-box__info">
+                        <a href="mailto:info@safegreet.com" class="contact-box__info--title">info@safegreet.com</a>
+                        <br><a href="mailto:lifeshied.ehs@gmail.com"
+                            class="contact-box__info--subtitle">lifeshied.ehs@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- CONTENT FOR LOCATION -->
+                <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex slide-in-right">
+                    <div class="contact-box__icon" style="cursor: pointer;"
+                        onclick="window.location.href='https://maps.app.goo.gl/QKZt9PCcGAj1AQMY9'">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2"
+                            viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <line x1="18" y1="6" x2="18" y2="6.01" />
+                            <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />
+                            <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />
+                            <line x1="9" y1="4" x2="9" y2="17" />
+                            <line x1="15" y1="15" x2="15" y2="20" />
+                        </svg>
+                    </div>
+                    <div class="contact-box__info">
+                        <a href="https://maps.app.goo.gl/QKZt9PCcGAj1AQMY9" class="contact-box__info--title">Dhankawadi,
+                            Pune</a>
+                        <br>
+                        <a href="https://maps.app.goo.gl/QKZt9PCcGAj1AQMY9" class="contact-box__info--subtitle">MH
+                            411043, IN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPANY INFO -->
+        <div class="container mt-5">
+            <div class="row text-white justify-content-center mt-3 pb-3">
+                <div class="col-12 col-sm-3 mb-sm-0 mb-4 mx-auto slide-in-left">
+                    <h5 class="text-capitalize fw-bold">LifeShield</h5>
+                    <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px" />
+                    <p class="lh-lg">
+                        LifeShield offers modern visitor management solutions, ensuring
+                        security and efficiency for businesses of all sizes.
+                    </p>
+
+                    <h5 class="text-capitalize fw-bold">Useful Links</h5>
+                    <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px" />
+                    <ul class="list-inline campany-list">
+                        <li><a href="/terms.html">Terms and conditions</a></li>
+                        <li><a href="/policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-8 mb-4 mx-auto slide-in-right d-flex flex-column">
+                    <h5 class="text-capitalize fw-bold">Directions</h5>
+                    <hr class="bg-white d-inline-block mb-4" style="width: 60px; height: 2px" />
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d551.3858387527422!2d73.85985466865144!3d18.46905849586803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eabb88f3fa51%3A0x34ef2a0cadd0404d!2sK%20K%20Market!5e1!3m2!1sen!2sin!4v1728930506088!5m2!1sen!2sin"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- COPYRIGHT INFO -->
+        <div class="footer-bottom pt-5 pb-5">
+            <div class="container">
+                <div class="row text-center text-white">
+                    <div class="col-12">
+                        <div class="footer-bottom__copyright">
+                            &COPY; Copyright 2024 SafeGreet | Created by
+                            <a href="http://codewithpatrick.com" target="_blank">SafeGreet Team</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <a href="#" class="shadow btn-primary rounded-circle back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script type="text/javascript">
+        document.getElementById('submit').addEventListener('click', async () => {
+            document.getElementById('submit').setAttribute('disabled', 'disabled');
+            const fileInput1 = document.getElementById('upload1');
+            const fileInput2 = document.getElementById('upload2');
+            const resultContainer = document.getElementById('result');
+
+            if (!fileInput1.files[0] || !fileInput2.files[0]) {
+                alert('Please upload both images.');
+                return;
+            }
+
+            const toBase64 = (file) =>
+                new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve(reader.result.split(',')[1]); // Remove the base64 prefix
+                    reader.onerror = (error) => reject(error);
+                    reader.readAsDataURL(file);
+                });
+
+            try {
+                const base64Image1 = await toBase64(fileInput1.files[0]);
+                const base64Image2 = await toBase64(fileInput2.files[0]);
+
+                const postData = {
+                    base1: base64Image1,
+                    base2: base64Image2,
+                };
+
+                const response = await fetch('https://visitor-dot-safegreet-446109.el.r.appspot.com/deepface', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(postData),
+                });
+
+                const result = await response.json();
+                // Display the result
+                resultContainer.innerHTML = `
+            <p>Upload successful!</p>
+            <p>Result:</p>
+            <img src="data:image/png;base64,${base64Image1}" alt="Processed Image 1">
+            <img src="data:image/png;base64,${base64Image2}" alt="Processed Image 2">
+            <div>Distance ${result.data && result.data.cosine_distance}</div>
+            <div>512 Distance ${result.data && result.data.cosine_distance_512}</div>
+            <div>128 Vec1 ${result.data && result.data.img_1_vec}</div>
+            <div>512 Vec1 ${result.data && result.data.img_1_vec_512}</div>
+            <div>128 Vec2 ${result.data && result.data.img_2_vec}</div>
+            <div>512 Vec2 ${result.data && result.data.img_2_vec_512}</div>
+        `;
+            } catch (error) {
+                console.error(error);
+                alert('An error occurred during the upload.');
+            }
+        });
+
+        const lightbox = GLightbox({
+            touchNavigation: true,
+            href: "https://www.youtube.com/watch?v=XFVrbLjKheM",
+            type: "video",
+            source: "youtube", //vimeo, youtube or local
+            width: 900,
+            autoPlayVideos: "true",
+        });
+    </script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
